@@ -1,0 +1,22 @@
+﻿@model string[]
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h2>Статистика унікальних користувачів</h2>
+                </div>
+                <div class="card-body">
+                    @foreach (var log in Model)
+                    {
+                        <p>@log</p>
+                    }
+                </div>
+                <div class="card-footer">
+                    <a asp-action="Index" class="btn btn-secondary">Повернутися до списку тварин</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

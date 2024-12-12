@@ -1,0 +1,39 @@
+﻿@{
+    var animalName = ViewData["AnimalName"] as string;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card mt-4">
+                <div class="card-header">
+                    Інформація про тварину
+                </div>
+                <div class="card-body">
+                    <h3>@animalName</h3>
+
+                    @switch (animalName)
+                    {
+                        case "Кіт":
+                            <p>Домашня тварина, яка любить спати та гратися.</p>
+                            break;
+                        case "Собака":
+                            <p>Вірний друг людини, любить активний відпочинок.</p>
+                            break;
+                        case "Папуга":
+                            <p>Яскрава та розумна пташка, здатна імітувати звуки.</p>
+                            break;
+                        case "Кролик":
+                            <p>Милий пухнастий вихованець, який полюбляє моркву.</p>
+                            break;
+                        default:
+                            <p>Інформація про тварину відсутня.</p>
+                            break;
+                    }
+
+                    <a asp-action="Index" class="btn btn-secondary">Повернутися до списку</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

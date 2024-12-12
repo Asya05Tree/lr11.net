@@ -1,0 +1,24 @@
+﻿@model List<string>
+
+<div class="container">
+    <h1 class="mt-4 mb-3">Список тварин</h1>
+    <div class="row mb-3">
+        <div class="col">
+            <a asp-action="UserStats" class="btn btn-info me-2">Переглянути статистику користувачів</a>
+            <a asp-action="ActionLogs" class="btn btn-warning">Переглянути лог дій</a>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var animal in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@animal</h5>
+                        <a asp-action="Details" asp-route-animalName="@animal" class="btn btn-primary">Детальніше</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
